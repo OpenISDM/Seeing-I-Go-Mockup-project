@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:Seeing_I_Go_toy_project.Views.Controls"
+             xmlns:i18n="clr-namespace:Seeing_I_Go_toy_project.Resources"
+             x:Class="Seeing_I_Go_toy_project.Views.Pages.NavigatorPage">
+    <ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness">
+            <OnPlatform.Platforms>
+                <On Platform="iOS" Value="0, 0, 0, 0" />
+                <On Platform="Android" Value="0, 0, 0, 0" />
+                <On Platform="UWP" Value="0, 0, 0, 0" />
+            </OnPlatform.Platforms>
+        </OnPlatform>
+    </ContentPage.Padding>
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="BoxView">
+                <Setter Property="HorizontalOptions" 
+						Value="Fill"/>
+
+                <Setter Property="VerticalOptions" 
+						Value="Fill"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout Margin="25,15,15,15">
+                <Label FontSize="Large" HorizontalOptions="StartAndExpand">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="{i18n:Translation DESTINATION_STRING}"/>
+                            <Span Text="{Binding DestinationWaypointName}"/>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+                <BoxView HeightRequest="3" BackgroundColor="Transparent"/>
+                <Label FontSize="Large" HorizontalOptions="StartAndExpand">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="{i18n:Translation CURRENT_LOCATION_STRING}"/>
+                            <Span Text="{Binding CurrentWaypointName}"/>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+            </StackLayout>
+            <Grid x:Name="TestGrid" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" BackgroundColor="White">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="2*"/>
+                    <RowDefinition Height="2*"/>
+                    <RowDefinition Height="2*"/>
+                    <RowDefinition Height="1.5*"/>
+                    <RowDefinition Height="0.5*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Image x:Name="InstructionImg" 
+                       Grid.Row="0" Grid.Column="0" 
+                       Grid.RowSpan="2" 
+                       IsVisible="{Binding StepImgIsVisible}"
+                       Source="{Binding CurrentStepImage}" 
+                       IsAnimationPlaying="{Binding IsAnimated}"/>
+
+                <Label x:Name="InstructionLab" 
+                       Text="{Binding CurrentStepLabel}" 
+                       Grid.Row="0"  
+                       Grid.RowSpan="{Binding InstructionLocationValue}" 
+                       Grid.Column="{Binding InstructionWidthScaleValue}"
+                       Grid.ColumnSpan="{Binding InstructionWidthSpanValue}" 
+                       LineBreakMode="WordWrap" FontSize="28" 
+                       VerticalOptions="{Binding InstructionLabVerticalOption}" 
+                       HorizontalOptions="FillAndExpand" 
+                       HorizontalTextAlignment="Center" 
+                       VerticalTextAlignment="Start"
+                       />
+
+                <controls:ProgressBar x:Name="ProgressBar"
+                                    ProgressColor="Red"                                   
+                                    Progress="{Binding ProgressRatio}"                                    
+                                    BackgroundColor="#dcdcdc"
+                                    Grid.Column="0"
+                                    Grid.Row="4"
+                                    Grid.ColumnSpan="3"                                    
+                                    />
+                <Label x:Name="ProgressTextValue" Text="{Binding ProgressText}" HorizontalOptions="EndAndExpand" FontSize="Large"
+                       Grid.Row="4" Grid.Column="2" />
+
+                <Image x:Name="FirstDirectionImg" Source="{Binding FirstDirectionPicture}" Grid.Row="{Binding FDPictureHeightScaleValue}" Grid.RowSpan="{Binding FDPictureHeightSpanValue}" Grid.Column="0" Grid.ColumnSpan="3" 
+                        Aspect="Fill" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"/>
+
+
+                <Button x:Name="FinishButton" Text="{i18n:Translation RETURN_STRING}"
+                        FontSize="Large"
+                        IsVisible="{Binding isFinished}"
+                        Grid.Row="3" Grid.Column="2" VerticalOptions="EndAndExpand" HorizontalOptions="EndAndExpand"
+                        />
+
+            </Grid>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

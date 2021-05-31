@@ -13,6 +13,7 @@ namespace Seeing_I_Go_toy_project
         public MainPage()
         {
             InitializeComponent();
+            
         }
     }
 }
