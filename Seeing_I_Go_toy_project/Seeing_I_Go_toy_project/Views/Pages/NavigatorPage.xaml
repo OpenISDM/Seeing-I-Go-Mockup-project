@@ -3,7 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:controls="clr-namespace:Seeing_I_Go_toy_project.Views.Controls"
              xmlns:i18n="clr-namespace:Seeing_I_Go_toy_project.Resources"
-             x:Class="Seeing_I_Go_toy_project.Views.Pages.NavigatorPage">
+             x:Class="Seeing_I_Go_toy_project.Views.Pages.NavigatorPage"
+             >
     <ContentPage.Padding>
         <OnPlatform x:TypeArguments="Thickness">
             <OnPlatform.Platforms>
@@ -14,6 +15,11 @@
         </OnPlatform>
     </ContentPage.Padding>
 
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="en" Command="{Binding}" />
+        <ToolbarItem Text="prev" Command="{Binding }" IsEnabled="{Binding PrevButtonEnabled}"/>
+        <ToolbarItem Text="next" Command="{Binding }" IsEnabled="{Binding NextButtonEnabled}"/>
+    </ContentPage.ToolbarItems>
     <ContentPage.Resources>
         <ResourceDictionary>
             <Style TargetType="BoxView">

@@ -34,9 +34,6 @@ namespace Seeing_I_Go_toy_project.Views.Controls
 
             double progress = NormalizeValue(Progress);
 
-            Console.WriteLine(progress);
-            Console.WriteLine("wwwwwww");
-
             if (progress < 100)
             {
                 Container.Children.Add(new BoxView

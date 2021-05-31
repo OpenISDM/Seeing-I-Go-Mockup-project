@@ -9,8 +9,10 @@ namespace Seeing_I_Go_toy_project
         public App()
         {
             InitializeComponent();
-            Console.WriteLine("bbb");
-            MainPage = new NavigationPage(new NavigatorPage());
+            NavigationPage _navigationPage = new NavigationPage(new NavigatorPage());
+            _navigationPage.BarBackgroundColor = Color.FromHex("#3f51b5");
+            _navigationPage.BarTextColor = Color.White;
+            MainPage = _navigationPage;
         }
 
         protected override void OnStart()

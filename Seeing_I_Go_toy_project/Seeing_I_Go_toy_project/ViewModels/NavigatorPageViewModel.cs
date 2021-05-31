@@ -17,7 +17,7 @@ namespace Seeing_I_Go_toy_project.ViewModels
         {
             InitialInstruction();
         }
-        
+
         public void InitialInstruction()
         {
             DestinationWaypointName = "母雞都壓";//destinationWaypointName;
@@ -26,7 +26,7 @@ namespace Seeing_I_Go_toy_project.ViewModels
             IsArrowImgVisible = true;
             ProgressRatio = 33;
             ProgressText = "0/0";
-            CurrentStepLabel =AppResources.NO_SIGNAL_STRING;
+            CurrentStepLabel = AppResources.NO_SIGNAL_STRING;
             CurrentWaypointName = AppResources.NULL_STRING;
             InstructionLabVerticalOption = LayoutOptions.CenterAndExpand;
             SetDefaultLayout();
@@ -54,11 +54,16 @@ namespace Seeing_I_Go_toy_project.ViewModels
             InstructionLocationValue = 1;
         }
         #endregion
-        private void NextButton_ClickedCommand() 
+        private void NextButton_ClickedCommand()
         {
-
+            SetInstruction(_currentStep + 1);
+            NextButtonEnabled = true;
         }
-        private void PreButton_ClickedCommand() { }
+        private void PreButton_ClickedCommand() 
+        {
+            SetInstruction(_currentStep - 1);
+            PreButtonEnabled = true;
+        }
 
         #region Data Binding
         private string _currentStepImage;
@@ -160,6 +165,23 @@ namespace Seeing_I_Go_toy_project.ViewModels
             get => _instructionLocationValue;
             set => SetProperty(ref _instructionLocationValue, value);
         }
+        #endregion
+
+        #region Next and Previouse step Button Control 
+        private bool _nextButtonEnabled = false;
+        public bool NextButtonEnabled
+        {
+            get => _nextButtonEnabled;
+            set => SetProperty(ref _nextButtonEnabled, (_currentStep > 5));
+        }
+
+        private bool _preButtonEnabled = true;
+        public bool PreButtonEnabled
+        {
+            get => _preButtonEnabled;
+            set => SetProperty(ref _preButtonEnabled, (_currentStep < 0));
+        }
+
         #endregion
         #endregion
     }

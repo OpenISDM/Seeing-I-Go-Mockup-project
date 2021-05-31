@@ -15,6 +15,7 @@ namespace Seeing_I_Go_toy_project.Views.Pages
         public NavigatorPage()
         {
             InitializeComponent();
+            
             Console.WriteLine(">>NavigatorPage : constructor");
 
             _viewmodel = new NavigatorPageViewModel();
