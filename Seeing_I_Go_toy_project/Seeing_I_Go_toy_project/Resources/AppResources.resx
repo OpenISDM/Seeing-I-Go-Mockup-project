@@ -328,10 +328,10 @@
     <value>Unable to avoid all connection types</value>
   </data>
   <data name="DESTINATION_STRING" xml:space="preserve">
-    <value>Goal : {0}</value>
+    <value>Goal : </value>
   </data>
   <data name="CURRENT_LOCATION_STRING" xml:space="preserve">
-    <value>Current location: {0}</value>
+    <value>Current location: </value>
   </data>
   <data name="DIRECTION_INITIAIL_FACE_STRING" xml:space="preserve">
     <value>Face to {0}{1}then {2}{3} And go straight about {4} m </value>
@@ -741,5 +741,8 @@ then go about {2} m.</value>
   </data>
   <data name="PAYMENT_STRING" xml:space="preserve">
     <value>Cashier</value>
+  </data>
+  <data name="DESTINATION1_STRING" xml:space="preserve">
+    <value>Destination 1</value>
   </data>
 </root>

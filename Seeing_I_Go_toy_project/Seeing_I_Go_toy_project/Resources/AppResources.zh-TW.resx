@@ -727,4 +727,19 @@
   <data name="ICON_STRING" xml:space="preserve">
     <value>圖示</value>
   </data>
+  <data name="DESTINATION1_STRING" xml:space="preserve">
+    <value>終點1</value>
+  </data>
+  <data name="ROUTE1_SRTING" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ROUTE2_SRTING" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ROUTE3_SRTING" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ROUTE4_STRING" xml:space="preserve">
+    <value />
+  </data>
 </root>

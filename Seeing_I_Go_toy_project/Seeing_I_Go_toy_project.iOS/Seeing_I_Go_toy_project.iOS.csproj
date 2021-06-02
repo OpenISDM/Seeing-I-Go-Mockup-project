@@ -133,4 +133,22 @@
       <Name>Seeing_I_Go_toy_project</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Arrived.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Arrow_right.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Arrow_up.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\CCH22201816.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Escalator_up.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\waittingscan.gif" />
+  </ItemGroup>
 </Project>

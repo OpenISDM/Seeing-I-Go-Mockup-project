@@ -394,7 +394,7 @@ namespace Seeing_I_Go_toy_project.Resources {
         }
         
         /// <summary>
-        ///   查詢類似 Current location: {0} 的當地語系化字串。
+        ///   查詢類似 Current location:  的當地語系化字串。
         /// </summary>
         internal static string CURRENT_LOCATION_STRING {
             get {
@@ -412,11 +412,20 @@ namespace Seeing_I_Go_toy_project.Resources {
         }
         
         /// <summary>
-        ///   查詢類似 Goal : {0} 的當地語系化字串。
+        ///   查詢類似 Goal :  的當地語系化字串。
         /// </summary>
         internal static string DESTINATION_STRING {
             get {
                 return ResourceManager.GetString("DESTINATION_STRING", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類似 Destination 1 的當地語系化字串。
+        /// </summary>
+        internal static string DESTINATION1_STRING {
+            get {
+                return ResourceManager.GetString("DESTINATION1_STRING", resourceCulture);
             }
         }
         
